@@ -317,10 +317,33 @@
             </section>
         </div>
         <div class="footer-secondary">
+           <style>
+        .language-selector {
+            margin: 20px;
+        }
+
+        label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        select {
+            padding: 5px;
+            font-size: 1rem;
+        }
+    </style>
+            <div class="language-selector">
+                <label for="language-select">Select Language:</label>
+                <select id="language-select" aria-label="Language Selector">
+                    <option value="en" selected>English</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
             <p>&copy; 2022 Brand, Inc. · Privacy · Terms · Sitemap</p>
         </div>
 
     </footer>
+<script src="script.js"></script>
 
 </body>
 
