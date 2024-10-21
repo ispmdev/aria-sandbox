@@ -11,7 +11,7 @@
 <body>
 
     <!-- Header Section -->
-    <header>
+    <header class="header">
         <!-- Navigation Section -->
         <nav class="nav">
             <button>Subscribe</button>
@@ -25,7 +25,7 @@
         </nav>
 
         <!-- Title Section -->
-        <div class="hero t-w">
+        <div class="hero t-w outfit">
             <h1>The Story of Brave Little Hunter</h1>
             <p>A true story of an orca that lost its mother while she was teaching her how to hunt.</p>
         </div>
@@ -96,9 +96,8 @@
                 <label for="email">Sign up</label>
                 <input type="email" id="email" name="email" placeholder="Your email">
                 <button type="submit">Sign up</button>
-
             </form>
-            <ul class="list-unstyled list-inline">
+            <ul class="list-unstyled list-inline list-social">
                 <!-- Facebook -->
                 <li>
                     <a href="https://facebook.com/mock" target="_blank" aria-label="Facebook">
@@ -156,14 +155,14 @@
             <h2>Westcoast NOW</h2>
             <section aria-labelledby="account">
                 <h3 id="account">Account</h3>
-                <ul>
+                <ul class="list-unstyled m-0 p-0">
                     <li>Features</li>
                     <li>ePaper</li>
                 </ul>
             </section>
             <section aria-labelledby="classified">
                 <h3 id="classified">Classified</h3>
-                <ul>
+                <ul class="list-unstyled m-0 p-0">
                     <li>Jobs</li>
                     <li>Remembering</li>
                     <li>Coupons</li>
@@ -171,18 +170,15 @@
             </section>
             <section aria-labelledby="wcn">
                 <h3 id="wcn">WCN</h3>
-                <ul>
+                <ul class="list-unstyled m-0 p-0">
                     <li>Montreal Gazette</li>
                     <li>Vancouver Sun</li>
                 </ul>
             </section>
         </div>
         <div class="footer-secondary">
-           <style>
-
-    </style>
             <div class="language-selector">
-                <label for="language-select">Select Language:</label>
+                <label for="language-select" class="visually-hidden">Select Language:</label>
                 <select id="language-select" aria-label="Language Selector">
                     <option value="en" selected>English</option>
                     <option value="fr">Français</option>
