@@ -1,146 +1,327 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brave Little Hunter Story</title>
-  <style>
-    /* Example basic styling for layout */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      display: flex;
-        flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #f8f9fa;
-      border-bottom: 1px solid #ddd;
-    }
-    .nav {
-      display: flex;
-      align-items: center;
-      border: 1px solid #cacaca;
-      gap: 20px;
-      width: 100%;
-    }
-      .hero{
-          min-height: 50vh;
-          background-image: url('images/bg-image.jpg')
-      }
-    nav button, nav img {
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-    }
-    nav img {
-      width: 20px;
-      height: 20px;
-    }
-    main, section, aside, footer {
-      padding: 20px;
-    }
-    form input {
-      padding: 8px;
-      margin-right: 10px;
-    }
-    form button {
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brave Little Hunter Story</title>
+    <style>
+        /* Example basic styling for layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            border: 1px solid #cacaca;
+            gap: 20px;
+            width: 100%;
+            min-height: 3rem;
+            background-color: grey;
+        }
+
+        .hero {
+            min-height: 50vh;
+            background-image: url('./images/bg-img.jpg');
+            background-size: cover;
+            width: 100%;
+            display: grid;
+            justify-items: end;
+        }
+
+        .hero h1,
+        .hero p {
+            width: 30vw;
+            margin: 1rem;
+        }
+
+        .hero h1 {
+            display: flex;
+            align-self: end;
+        }
+
+        nav button,
+        nav img {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        nav img {
+            width: 20px;
+            height: 20px;
+        }
+
+        main,
+        section,
+        aside,
+        footer {
+            padding: 20px;
+        }
+
+        form input {
+            padding: 8px;
+            margin-right: 10px;
+        }
+
+        form button {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .outfit {
+            min-height: 500px;
+        }
+
+        .bg-d {
+            background-color: black;
+        }
+
+        .bg-l {
+            background-color: white;
+        }
+
+        .t-w {
+            color: white;
+        }
+
+        .col-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .col-4 {
+            display: grid;
+            grid-template-columns: 3fr 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .col-2 img {
+            width: 100%;
+        }
+
+        .list-unstyled {
+            list-style: none;
+        }
+
+        .m-0 {
+            margin: 0;
+        }
+
+        .p-0 {
+            padding: 0;
+        }
+
+        .video-item {
+            border-bottom: 1px solid white;
+        }
+
+        .newsletter-section {
+            background-image: url('./images/seaweed.png');
+            background-size: cover;
+        }
+
+        .list-inline {
+            display: inline-flex;
+        }
+
+        .newsletter-section section {
+            width: 45vw;
+            grid-column: 2 / 2;
+            margin: 3rem;
+        }
+    </style>
 </head>
+
 <body>
 
-  <!-- Header Section -->
-  <header>
-   <!-- Navigation Section -->
-    <nav class="nav">
-      <button>Subscribe</button>
-      <button>Sign In</button>
-      <button>
-        <img src="search-icon.png" alt="Search Icon" />
-      </button>
-      <button>
-        <img src="menu-icon.png" alt="Menu Icon" />
-      </button>
-    </nav>
-    
-    <!-- Title Section -->
-    <div class="hero">
-      <h1>The Story of Brave Little Hunter</h1>
-      <p>A true story of an orca that lost its mother while she was teaching her how to hunt.</p>
-    </div>    
-  </header>
+    <!-- Header Section -->
+    <header>
+        <!-- Navigation Section -->
+        <nav class="nav">
+            <button>Subscribe</button>
+            <button>Sign In</button>
+            <button>
+                <img src="search-icon.png" alt="Search Icon" />
+            </button>
+            <button>
+                <img src="menu-icon.png" alt="Menu Icon" />
+            </button>
+        </nav>
 
-  <!-- Main Content Section -->
-  <main>
-    <section>
-      <p>BRAVE LITTLE HUNTER's location is currently unknown, and that's a good thing. Towers explained, "We went out and surveyed the area the day after that she was free, and we didn’t see or hear her at all, which was excellent news. It just means that she's on the move, which is great. That's the best kind of outcome we can hope for right now," he said.</p>
-      <blockquote>
-        “It’s only a matter of time really until this whale is photographed again, either by herself or most likely with another group of Bigg's killer whales. So we just have to be patient and be on the lookout for that.”
-      </blockquote>
-    </section>
-  </main>
+        <!-- Title Section -->
+        <div class="hero t-w">
+            <h1>The Story of Brave Little Hunter</h1>
+            <p>A true story of an orca that lost its mother while she was teaching her how to hunt.</p>
+        </div>
+    </header>
 
-  <!-- Sidebar Section -->
-  <aside>
-    <ul>
-      <li>Architecto Ut enim ad minima veni am, quis nost</li>
-      <li>Architecto Ut enim ad minima veni am, quis nost</li>
-      <li>Architecto Ut enim ad minima veni am, quis nost</li>
-      <li>Architecto Ut enim ad minima veni am, quis nost</li>
-      <li>Architecto Ut enim ad minima veni am, quis nost</li>
-    </ul>
-  </aside>
+    <!-- Main Content Section -->
+    <main>
+        <section class="col-2 outfit">
+            <img src="./images/orca.png" alt="orca pic">
+            <div class="content">
+                <h2>the story</h2>
+                <p>BRAVE LITTLE HUNTER's location is currently unknown, and that's a good thing. Towers explained, "We went out and surveyed the area the day after that she was free, and we didn’t see or hear her at all, which was excellent news. It just means that she's on the move, which is great. That's the best kind of outcome we can hope for right now," he said.</p>
+                <blockquote>
+                    “It’s only a matter of time really until this whale is photographed again, either by herself or most likely with another group of Bigg's killer whales. So we just have to be patient and be on the lookout for that.”
+                </blockquote>
 
-  <!-- Video Section -->
-  <section aria-labelledby="video-section">
-    <h2 id="video-section">Canada Video</h2>
-    <video src="video.mp4" controls></video>
-    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
-  </section>
+            </div>
 
-  <!-- Newsletter Section -->
-  <section aria-labelledby="newsletter">
-    <h2 id="newsletter">BLH Newsletter</h2>
-    <p>Stay in the know on BLH whereabouts as cetologists try to find her again.</p>
-    <form>
-      <label for="email">Sign up</label>
-      <input type="email" id="email" name="email" placeholder="Your email">
-      <button type="submit">Sign up</button>
-    </form>
-  </section>
+        </section>
+    </main>
+    <div class="outfit t-w bg-d ">
 
-  <!-- Footer Section -->
-  <footer>
-    <section aria-labelledby="account">
-      <h2 id="account">Account</h2>
-      <ul>
-        <li>Features</li>
-        <li>ePaper</li>
-      </ul>
-    </section>
-    <section aria-labelledby="classified">
-      <h2 id="classified">Classified</h2>
-      <ul>
-        <li>Jobs</li>
-        <li>Remembering</li>
-        <li>Coupons</li>
-      </ul>
-    </section>
-    <section aria-labelledby="wcn">
-      <h2 id="wcn">WCN</h2>
-      <ul>
-        <li>Montreal Gazette</li>
-        <li>Vancouver Sun</li>
-      </ul>
-    </section>
-    <p>&copy; 2022 Brand, Inc. · Privacy · Terms · Sitemap</p>
-  </footer>
+        <!-- Video Section -->
+        <section aria-labelledby="video-section" class="col-2">
+            <div>
+                <h2 id="video-section">Canada Video</h2>
+                <video src="video.mp4" controls></video>
+                <h3>video title</h3>
+                <p>video description Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</p>
+            </div>
+
+            <!-- Sidebar Section -->
+            <div>
+                <ul class="list-unstyled m-0 p-0">
+                    <li class="video-item">
+                        <h3>Architecto</h3>
+                        <p>Ut enim ad minima veni am, quis nost</p>
+                    </li>
+                    <li class="video-item">
+                        <h3>Architecto</h3>
+                        <p>Ut enim ad minima veni am, quis nost</p>
+                    </li>
+                    <li class="video-item">
+                        <h3>Architecto</h3>
+                        <p>Ut enim ad minima veni am, quis nost</p>
+                    </li>
+                    <li class="video-item">
+                        <h3>Architecto</h3>
+                        <p>Ut enim ad minima veni am, quis nost</p>
+                    </li>
+                    <li>
+                        <h3>Architecto</h3>
+                        <p>Ut enim ad minima veni am, quis nost</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="outfit newsletter-section col-2">
+
+        <!-- Newsletter Section -->
+        <section aria-labelledby="newsletter" class="bg-l">
+            <h2 id="newsletter">BLH Newsletter</h2>
+            <p>Stay in the know on BLH whereabouts as cetologists try to find her again.</p>
+            <form>
+                <label for="email">Sign up</label>
+                <input type="email" id="email" name="email" placeholder="Your email">
+                <button type="submit">Sign up</button>
+
+            </form>
+            <ul class="list-unstyled list-inline">
+                <!-- Facebook -->
+                <li>
+                    <a href="https://facebook.com/mock" target="_blank" aria-label="Facebook">
+                        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Dark Circle Background -->
+                            <circle cx="20" cy="20" r="20" fill="#333333" />
+                            <!-- Facebook "F" Icon -->
+                            <text x="50%" y="50%" text-anchor="middle" dy=".35em" font-family="Arial, sans-serif" font-size="20" fill="#ffffff">F</text>
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- Twitter -->
+                <li>
+                    <a href="https://twitter.com/mock" target="_blank" aria-label="Twitter">
+                        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Dark Circle Background -->
+                            <circle cx="20" cy="20" r="20" fill="#333333" />
+                            <!-- Twitter "T" Icon -->
+                            <text x="50%" y="50%" text-anchor="middle" dy=".35em" font-family="Arial, sans-serif" font-size="20" fill="#ffffff">T</text>
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- Instagram -->
+                <li>
+                    <a href="https://instagram.com/mock" target="_blank" aria-label="Instagram">
+                        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Dark Circle Background -->
+                            <circle cx="20" cy="20" r="20" fill="#333333" />
+                            <!-- Instagram "I" Icon -->
+                            <text x="50%" y="50%" text-anchor="middle" dy=".35em" font-family="Arial, sans-serif" font-size="20" fill="#ffffff">I</text>
+                        </svg>
+                    </a>
+                </li>
+
+                <!-- LinkedIn -->
+                <li>
+                    <a href="https://linkedin.com/mock" target="_blank" aria-label="LinkedIn">
+                        <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Dark Circle Background -->
+                            <circle cx="20" cy="20" r="20" fill="#333333" />
+                            <!-- LinkedIn "L" Icon -->
+                            <text x="50%" y="50%" text-anchor="middle" dy=".35em" font-family="Arial, sans-serif" font-size="20" fill="#ffffff">L</text>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-main col-4">
+            <h2>Westcoast NOW</h2>
+            <section aria-labelledby="account">
+                <h3 id="account">Account</h3>
+                <ul>
+                    <li>Features</li>
+                    <li>ePaper</li>
+                </ul>
+            </section>
+            <section aria-labelledby="classified">
+                <h3 id="classified">Classified</h3>
+                <ul>
+                    <li>Jobs</li>
+                    <li>Remembering</li>
+                    <li>Coupons</li>
+                </ul>
+            </section>
+            <section aria-labelledby="wcn">
+                <h3 id="wcn">WCN</h3>
+                <ul>
+                    <li>Montreal Gazette</li>
+                    <li>Vancouver Sun</li>
+                </ul>
+            </section>
+        </div>
+        <div class="footer-secondary">
+            <p>&copy; 2022 Brand, Inc. · Privacy · Terms · Sitemap</p>
+        </div>
+
+    </footer>
 
 </body>
+
 </html>
