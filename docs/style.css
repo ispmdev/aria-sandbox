@@ -160,10 +160,652 @@ select {
     clip: rect(0, 0, 0, 0);
     border: 0;
 }
-.footer-secondary {
+.footer-secondary, .nav {
     display: flex;
     justify-content: space-between;
 }
 .list-social li {
     margin-left: 1rem;
+}
+.list-social{
+    margin-top: 2rem;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F5F5F5; /* Light grey background */
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav .left {
+    display: flex;
+    align-items: center;
+}
+
+.nav .left svg {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.menu-button:focus {
+    outline: 2px solid #000;
+}
+
+.nav .right a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav .right a:hover,
+.nav .right a:focus {
+    text-decoration: underline;
+}
+
+/* Sliding Drawer */
+.side-drawer {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Hidden by default */
+    width: 300px;
+    height: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 1100;
+}
+
+.side-drawer.open {
+    left: 0;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-button:focus {
+    outline: 2px solid #000;
+}
+
+.drawer-nav ul {
+    list-style: none;
+    margin-top: 60px;
+}
+
+.drawer-nav li {
+    margin: 20px 0;
+}
+
+.drawer-nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem;
+}
+
+.drawer-nav a:hover,
+.drawer-nav a:focus {
+    color: #555;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1050;
+    transition: opacity 0.3s ease;
+}
+
+.overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Main Content */
+main {
+    margin-top: 60px; /* To prevent content being hidden behind the fixed nav */
+    padding: 20px;
+}
+
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Utility Class for Visually Hidden Elements */
+.visually-hidden { 
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    padding: 0; 
+    margin: -1px; 
+    overflow: hidden; 
+    clip: rect(0, 0, 0, 0); 
+    white-space: nowrap; 
+    border: 0; 
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F5F5F5; /* Light grey background */
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav .left {
+    display: flex;
+    align-items: center;
+}
+
+.nav .left svg {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.menu-button, .search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 15px;
+}
+
+.menu-button:focus, .search-button:focus, .close-search-button:focus, .close-button:focus {
+    outline: 2px solid #000;
+}
+
+.nav .right a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav .right a:hover,
+.nav .right a:focus {
+    text-decoration: underline;
+}
+
+/* Sliding Drawer */
+.side-drawer {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Hidden by default */
+    width: 300px;
+    height: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 1100;
+}
+
+.side-drawer.open {
+    left: 0;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.drawer-nav ul {
+    list-style: none;
+    margin-top: 60px;
+}
+
+.drawer-nav li {
+    margin: 20px 0;
+}
+
+.drawer-nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem;
+}
+
+.drawer-nav a:hover,
+.drawer-nav a:focus {
+    color: #555;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1050;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Utility Class for Visually Hidden Elements */
+.visually-hidden { 
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    padding: 0; 
+    margin: -1px; 
+    overflow: hidden; 
+    clip: rect(0, 0, 0, 0); 
+    white-space: nowrap; 
+    border: 0; 
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F5F5F5; /* Light grey background */
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav .left {
+    display: flex;
+    align-items: center;
+}
+
+.nav .left svg {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.menu-button, .search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 15px;
+}
+
+.menu-button:focus, .search-button:focus, .close-search-button:focus, .close-button:focus {
+    outline: 2px solid #000;
+}
+
+.nav .right a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav .right a:hover,
+.nav .right a:focus {
+    text-decoration: underline;
+}
+
+/* Sliding Drawer */
+.side-drawer {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Hidden by default */
+    width: 300px;
+    height: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+    padding: 20px;
+    transition: left 0.3s ease;
+    z-index: 1100;
+}
+
+.side-drawer.open {
+    left: 0;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.drawer-nav ul {
+    list-style: none;
+    margin-top: 60px;
+}
+
+.drawer-nav li {
+    margin: 20px 0;
+}
+
+.drawer-nav a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem;
+}
+
+.drawer-nav a:hover,
+.drawer-nav a:focus {
+    color: #555;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1050;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Main Content */
+main {
+    margin-top: 60px; /* To prevent content being hidden behind the fixed nav */
+    padding: 20px;
+}
+
+/* Search Container */
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    width: 0;
+    transition: width 0.3s ease;
+    margin-right: 15px;
+}
+
+.search-input {
+    width: 200px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: width 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.search-container.active {
+    width: 220px; /* Adjust according to input width plus margins */
+}
+
+.search-container.active .search-input {
+    opacity: 1;
+}
+
+.close-search-button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    margin-left: -30px; /* Position over the input */
+    cursor: pointer;
+    display: none;
+}
+
+.search-container.active .close-search-button {
+    display: block;
+}
+
+/* Adjust SVG Icons Alignment */
+.menu-button svg, .search-button svg {
+    display: block;
+}
+
+
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Utility Class for Visually Hidden Elements */
+.visually-hidden { 
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    padding: 0; 
+    margin: -1px; 
+    overflow: hidden; 
+    clip: rect(0, 0, 0, 0); 
+    white-space: nowrap; 
+    border: 0; 
+}
+
+/* Newsletter Section Styling */
+.bg-l {
+    background-color: #f0f0f0; /* Light grey background */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.sign-up-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #333; /* Dark background */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sign-up-button:hover,
+.sign-up-button:focus {
+    background-color: #555;
+    outline: none;
+}
+
+/* Modal Overlay Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Below the modal */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Styling */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: #fff;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000; /* Above the overlay */
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-content {
+    padding: 20px;
+    position: relative;
+}
+
+.close-modal-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.close-modal-button:hover,
+.close-modal-button:focus {
+    color: #555;
+    outline: none;
+}
+
+.modal-content h2 {
+    margin-bottom: 20px;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-content input[type="email"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content button[type="submit"] {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-content button[type="submit"]:hover,
+.modal-content button[type="submit"]:focus {
+    background-color: #555;
+    outline: none;
+}
+
+/* Accessibility: Focus Styles */
+button:focus,
+input:focus {
+    outline: 2px solid #000;
+    outline-offset: 2px;
 }

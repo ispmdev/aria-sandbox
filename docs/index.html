@@ -12,27 +12,73 @@
 
     <!-- Header Section -->
     <header class="header">
-        <!-- Navigation Section -->
-        <nav class="nav">
-            <button>Subscribe</button>
-            <button>Sign In</button>
-            <button>
-                <img src="search-icon.png" alt="Search Icon" />
+        <!-- Navigation Bar -->
+    <nav class="nav">
+        <div class="left">            
+
+            <!-- Hamburger Menu Button -->
+            <button class="menu-button" id="menu-button" aria-label="Open menu" aria-controls="side-drawer" aria-expanded="false">
+                <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <!-- First Line -->
+                    <rect x="8" y="12" width="24" height="2" fill="#000" />
+                    <!-- Second Line -->
+                    <rect x="8" y="19" width="24" height="2" fill="#000" />
+                    <!-- Third Line -->
+                    <rect x="8" y="26" width="24" height="2" fill="#000" />
+                </svg>
             </button>
-            <button>
-                <img src="menu-icon.png" alt="Menu Icon" />
+            
+            <!-- Search Icon Button -->
+            <button class="search-button" id="search-button" aria-label="Open search" aria-expanded="false" aria-controls="search-input">
+                <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <!-- Circle for the lens -->
+                    <circle cx="14" cy="14" r="10" stroke="#000" stroke-width="2" fill="none" />
+                    <!-- Handle -->
+                    <line x1="21" y1="21" x2="34" y2="34" stroke="#000" stroke-width="2" stroke-linecap="round" />
+                </svg>
             </button>
+
+            <!-- Search Input (Hidden by Default) -->
+            <div class="search-container" id="search-container">
+                <label for="search-input" class="visually-hidden">Search</label>
+                <input type="text" id="search-input" class="search-input" placeholder="Search..." aria-label="Search">
+                <button class="close-search-button" id="close-search-button" aria-label="Close search">&times;</button>
+            </div>
+            
+        </div>
+
+        <div class="right">
+            <a href="#">Subscribe</a>
+            <a href="#">Sign In</a>
+        </div>
+    </nav>
+
+    <!-- Sliding Drawer -->
+    <aside class="side-drawer" id="side-drawer" aria-hidden="true">
+        <button class="close-button" id="close-button" aria-label="Close menu">&times;</button>
+        <nav class="drawer-nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
         </nav>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" hidden></div>
 
         <!-- Title Section -->
         <div class="hero t-w outfit">
-            <h1>The Story of Brave Little Hunter</h1>
+            <h1 class="uppercase">The Story of Brave Little Hunter</h1>
             <p>A true story of an orca that lost its mother while she was teaching her how to hunt.</p>
         </div>
     </header>
 
     <!-- Main Content Section -->
-    <main>
+    <main style="background-color: #F5F5F5;">
         <section class="col-2 outfit">
             <img src="./images/orca.png" alt="orca pic">
             <div class="content">
@@ -90,13 +136,13 @@
 
         <!-- Newsletter Section -->
         <section aria-labelledby="newsletter" class="bg-l">
+           <div>
+               
+           
             <h2 id="newsletter">BLH Newsletter</h2>
             <p>Stay in the know on BLH whereabouts as cetologists try to find her again.</p>
-            <form>
-                <label for="email">Sign up</label>
-                <input type="email" id="email" name="email" placeholder="Your email">
-                <button type="submit">Sign up</button>
-            </form>
+            <button id="open-modal" class="sign-up-button">Sign Up</button>
+            </div>
             <ul class="list-unstyled list-inline list-social">
                 <!-- Facebook -->
                 <li>
@@ -188,6 +234,22 @@
         </div>
 
     </footer>
+    
+    <!-- Modal Structure -->
+<div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-content">
+        <button id="close-modal" class="close-modal-button" aria-label="Close sign up form">&times;</button>
+        <h2 id="modal-title">Sign Up for the BLH Newsletter</h2>
+        <form id="newsletter-form">
+            <label for="modal-email">Email Address</label>
+            <input type="email" id="modal-email" name="email" placeholder="Your email" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!-- Overlay for Modal -->
+<div id="modal-overlay" class="modal-overlay" hidden></div>
 <script src="script.js"></script>
 
 </body>
